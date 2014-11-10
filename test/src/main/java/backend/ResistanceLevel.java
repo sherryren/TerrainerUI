@@ -16,6 +16,7 @@ public class ResistanceLevel {
     public ResistanceLevel(BlueToothCommunicator btc){
         this.resistance = 0;
         this.btc = btc;
+        btc.sendMessageToBlueToothCommunicator(Message.writeResistanceUpdateForBTC(0));
     }
 
     /**
@@ -25,6 +26,7 @@ public class ResistanceLevel {
     public ResistanceLevel(int starting_resistance, BlueToothCommunicator btc){
         this.resistance = starting_resistance;
         this.btc = btc;
+        btc.sendMessageToBlueToothCommunicator(Message.writeResistanceUpdateForBTC(starting_resistance));
     }
 
     /**
@@ -58,6 +60,7 @@ public class ResistanceLevel {
      */
     public void setResistance(int desiredLevel){
         this.resistance = desiredLevel;
+        btc.sendMessageToBlueToothCommunicator(Message.writeResistanceUpdateForBTC(desiredLevel));
     }
 }
 
