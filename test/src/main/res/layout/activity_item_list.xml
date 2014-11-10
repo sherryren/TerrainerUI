@@ -1,6 +1,30 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/item_list"
-    android:name="com.example.sherry.test.ItemListFragment" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp" tools:context=".ItemListActivity"
-    tools:layout="@android:layout/list_content" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.spruce.android.home.HomeActivity$PlaceholderFragment">
+
+<TextView
+    android:id="@+id/section_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="100dp"
+    android:text="Power"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="30dp"
+    android:background="@drawable/arrow_up"
+    android:id="@+id/button"></Button>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/arrow_down"
+    android:layout_below="@+id/button"
+    android:layout_alignLeft="@+id/button"
+    android:layout_alignStart="@+id/button"></Button>
+
+</RelativeLayout>
