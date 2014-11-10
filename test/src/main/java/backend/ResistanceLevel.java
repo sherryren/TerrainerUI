@@ -20,7 +20,7 @@ public class ResistanceLevel {
 
     /**
      * Creator method for a resistance level, can be called with the
-     * argument starting_reisstance to set the starting resistance
+     * argument starting_resistance to set the starting resistance
      */
     public ResistanceLevel(int starting_resistance, BlueToothCommunicator btc){
         this.resistance = starting_resistance;
@@ -32,33 +32,23 @@ public class ResistanceLevel {
      * A method that tells you what the current resistance is(a note here is that there are two different values
      * we can consider, we can say what the person is actually feeling, or what the person will feel when the mechanical
      * system catches up. From a user feedback perspective I think it would be best to do the catch up one)
-     * @return an int reporesenting the currest resistance level
+     * @return an int representing the current resistance level
      */
-    public int getCurrentresistance(){
+    public int getCurrentResistance(){
         return this.resistance;
     }
 
     /**
      * Lvl E
-     * A method to increase the current resistance, this method should update the value that getCurrenresistance returns
+     * A method to increase the current resistance, this method should update the value that getCurrentResistance returns
      * as well as send a message to the BlueToothCommunicator with the good news of the increased resistance
-     * @param increaseAmount the amount by which you want to increase the resistance
+     * @param changeAmount the amount by which you want to increase the resistance
      */
-    public void increaseresistance(int increaseAmount){
-        int new_resistance = this.resistance + increaseAmount;
+    public void changeResistance(int changeAmount){
+        int new_resistance = this.resistance + changeAmount;
         btc.sendMessageToBlueToothCommunicator(Message.writeResistanceUpdateForBTC(new_resistance));
         this.resistance = new_resistance;
-
-
     }
-
-    /**
-     * Lvl E
-     * A method to decrease the current resistance, this method should update the value that getCurrenresistance returns
-     * as well as send a message to the BlueToothCommunicator with the good news of the decreased resistance
-     * @param decreaseAmount the amount by which you want to increase the resistance
-     */
-    public void decreaseResistance(int decreaseAmount){}
 
     /**
      * Lvl E
@@ -66,6 +56,8 @@ public class ResistanceLevel {
      * lso make sure to tell the BlueToothCommunicator
      * @param desiredLevel the level that the resistance level should be
      */
-    public void setResistance(int desiredLevel){}
+    public void setResistance(int desiredLevel){
+        this.resistance = desiredLevel;
+    }
 }
 
