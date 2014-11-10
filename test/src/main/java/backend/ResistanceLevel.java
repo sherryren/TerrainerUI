@@ -1,7 +1,5 @@
 package backend;
 
-package back end;
-        import back end/BlueToothCommunicator.java;
 /**
  * This class will keep track of the resistance level
  * @author Justin
@@ -24,7 +22,7 @@ public class ResistanceLevel {
      * Creator method for a resistance level, can be called with the
      * argument starting_reisstance to set the starting resistance
      */
-    public ResistanceLevel(int starting_resistance){
+    public ResistanceLevel(int starting_resistance, BlueToothCommunicator btc){
         this.resistance = starting_resistance;
         this.btc = btc;
     }
@@ -48,6 +46,8 @@ public class ResistanceLevel {
      */
     public void increaseresistance(int increaseAmount){
         int new_resistance = this.resistance + increaseAmount;
+        btc.sendMessageToBlueToothCommunicator(Message.writeResistanceUpdateForBTC(new_resistance));
+        this.resistance = new_resistance;
 
 
     }
