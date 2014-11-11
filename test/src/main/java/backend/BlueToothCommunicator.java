@@ -3,6 +3,7 @@ package backend;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * This class will be responsible for all communication with the arduino.
@@ -21,7 +22,7 @@ public class BlueToothCommunicator {
      */
     public BlueToothCommunicator(){
         //this. attaches BackendMessageQueue to this particular instance
-        this.BackendMessageQueue = new ArrayBlockingQueue<String>();
+        this.BackendMessageQueue = new LinkedBlockingQueue<String>();
     }
 
     /**

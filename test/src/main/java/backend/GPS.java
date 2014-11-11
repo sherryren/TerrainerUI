@@ -26,6 +26,8 @@ public class GPS {
      * Use this to find out how fast the cyclist is traveling. Preferably in m/s
      * @return
      */
-    public float getSpeed(){}
+    public float getSpeed(){
+        return 0;
+    }
 
 }
