@@ -53,7 +53,13 @@ public class BlueToothCommunicator {
      * live in the backend message loop. It just makes the code cleaner when you do it this way.
      * This method will take in a message from the back end and perform the appropriate action
      */
-    private void parseBackendMessage (){}
+    private void parseBackendMessage (String message){
+        String [] args = message.split(" ");
+        if (args[0].equals("resistance")){
+            int resistance = Integer.parseInt(args[1]);
+            //tell the arduino that this is their new reisstance
+        }
+    }
 
     /**
      * Lvl E
@@ -61,7 +67,11 @@ public class BlueToothCommunicator {
      */
     public void sendMessageToBlueToothCommunicator(String message){
         //put message onto blocking queue
-        BackendMessageQueue.put(message);
+        try {
+            BackendMessageQueue.put(message);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 
