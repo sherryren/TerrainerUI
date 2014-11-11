@@ -21,7 +21,8 @@ public class BlueToothCommunicator {
      */
     public BlueToothCommunicator(){
         //this. attaches BackendMessageQueue to this particular instance
-        this.BackendMessageQueue = new ArrayBlockingQueue<String>();
+        //this.BackendMessageQueue = new ArrayBlockingQueue<String>(); commenting this out so i can test the UI
+
     }
 
     /**
