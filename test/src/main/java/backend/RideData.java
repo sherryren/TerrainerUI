@@ -14,15 +14,21 @@ package backend;
  * update the Ride_Data
  * @author Justin
  */
+
+
+
 public class RideData {
 
-    /**
+
+/**
      * Lvl E
      * The method to create an instance of the Ride_Data, you will likely need to put some arguments in here
      */
+
     public RideData (){}
 
-    /**
+
+/**
      * Lvl E/M
      * This method should return the time since the beginning of the ride
      *  in seconds(may need to change units depending on requirements)
@@ -32,7 +38,7 @@ public class RideData {
         return 0;
     }
 
-    /**
+     /*
      * Lvl E
      * This method will return the current speed that we are traveling at
      * @return a speed in m/s
@@ -41,7 +47,7 @@ public class RideData {
         return 0;
     }
 
-    /**
+/**
      * Lvl M
      * You can probably guess what this will do, but it is good form for me to write it anyway,
      * This method will return the current power of the rider
@@ -51,16 +57,16 @@ public class RideData {
         return 0;
     }
 
-    /**
+/**
      * Lvl E
      * This method will return the total path length traveled by the rider
      * @return a distance in meters
+
      */
     public float getDistanceTraveled(){
         return 0;
     }
-
-    /**
+/**
      * Lvl M/H
      * This method will return a new
      * Ride_Data that has the updated information.
