@@ -9,7 +9,7 @@ tools:context="com.spruce.android.home.HomeActivity$PlaceholderFragment">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingLeft="100dp"
-    android:text="Power"/>
+    android:text="item_list"/>
 
 <Button
     android:layout_width="wrap_content"
