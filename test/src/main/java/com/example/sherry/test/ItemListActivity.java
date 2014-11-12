@@ -44,7 +44,7 @@ public class ItemListActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_distance_time);
+        setContentView(R.layout.edit_resistance);
         resistanceDisplay = (TextView) findViewById(R.id.resistanceDisplay);
         resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
         bluetoothArduino.Connect();
