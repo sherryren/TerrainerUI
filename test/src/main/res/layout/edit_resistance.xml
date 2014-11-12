@@ -34,12 +34,22 @@
         android:layout_width="384dp"
         android:layout_height="wrap_content"
             android:drawableLeft="@drawable/up"
-        android:onClick="editResistance"
+        android:onClick="increaseResistance"
         android:clickable="true"
         android:nestedScrollingEnabled="false"
         android:id="@+id/item_list"
         >
-    </Button>
+    	</Button>
+    	<Button
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/down"
+        android:onClick="decreaseResistance"
+        android:clickable="true"
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/item_list"
+        >
+    	</Button>
     </LinearLayout>
 
 </LinearLayout>
