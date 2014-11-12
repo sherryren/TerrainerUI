@@ -100,4 +100,10 @@ public class ItemListActivity extends Activity
         bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
         resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
     }
+    
+      public void editResistance(View view){
+        resistanceLevel.changeResistance(1);
+        bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
+        resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
+    }
 }
