@@ -4,15 +4,6 @@
     android:layout_height="match_parent">
 
 
-    <TextSwitcher
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/textSwitcher"
-        android:layout_gravity="bottom"
-        android:minHeight="50dp"
-        android:minWidth="50dp"
-        android:nestedScrollingEnabled="false" />
-
     <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -24,5 +15,13 @@
     android:id="@+id/item_list"
     >
 </Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/resistanceDisplay"
+        android:layout_gravity="center_vertical" />
 
 </LinearLayout>

@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.TextView;
+
+import backend.BlueToothCommunicator;
+import backend.BluetoothArduino;
+import backend.ResistanceLevel;
 
 
 /**
@@ -30,11 +35,20 @@ public class ItemListActivity extends Activity
      * device.
      */
     private boolean mTwoPane;
+    private final String BLUETOOTH_NAME = "ExampleRobot";
+    private TextView resistanceDisplay;
+    private BluetoothArduino bluetoothArduino= BluetoothArduino.getInstance(BLUETOOTH_NAME);
+    private ResistanceLevel resistanceLevel = new ResistanceLevel();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_distance_time);
+        resistanceDisplay = (TextView) findViewById(R.id.resistanceDisplay);
+        resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
+        bluetoothArduino.Connect();
+        bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -48,6 +62,7 @@ public class ItemListActivity extends Activity
             ((ItemListFragment) getFragmentManager()
                     .findFragmentById(R.id.item_list))
                     .setActivateOnItemClick(true);
+
         }
 
         // TODO: If exposing deep links into your app, handle intents here.
@@ -81,6 +96,8 @@ public class ItemListActivity extends Activity
     }
 
     public void chooseDistanceTime(View view){
-        System.out.println("I got the button to do something");
+        resistanceLevel.changeResistance(1);
+        bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
+        resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
     }
 }

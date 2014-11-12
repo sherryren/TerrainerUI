@@ -1,5 +1,5 @@
 package backend;
-
+//Depreciated
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -30,7 +30,9 @@ public class BlueToothCommunicator {
      * This function will be used to connect to the arduino, I really don't know what this will
      * entail or what the result will be. This task will take a bit of investigation into the android API
      */
-    private void connect (){}
+    private void connect (){
+
+    }
 
     /**
      * Lvl ?
