@@ -9,6 +9,8 @@ package backend;
  */
 public class ResistanceLevel {
     private int resistance;
+    private final int MAX_LEVEL = 5;
+    private final int MIN_LEVEL = 0;
     /**
      * Creator method for a resistance level
      */
@@ -42,6 +44,12 @@ public class ResistanceLevel {
      */
     public void changeResistance(int changeAmount){
         int new_resistance = this.resistance + changeAmount;
+        if (new_resistance > MAX_LEVEL){
+            new_resistance=MAX_LEVEL;
+        }
+        if (new_resistance<MIN_LEVEL){
+            new_resistance = MIN_LEVEL;
+        }
         this.resistance = new_resistance;
     }
 

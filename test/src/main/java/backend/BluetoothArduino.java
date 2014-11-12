@@ -60,6 +60,7 @@ public class BluetoothArduino extends Thread {
             Set<BluetoothDevice> paired = mBlueAdapter.getBondedDevices();
             if (paired.size() > 0) {
                 for (BluetoothDevice d : paired) {
+                    System.out.println(d.getName());
                     if (d.getName().equals(robotName)) {
                         mBlueRobo = d;
                         robotFound = true;

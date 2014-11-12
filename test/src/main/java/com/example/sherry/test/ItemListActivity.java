@@ -35,20 +35,22 @@ public class ItemListActivity extends Activity
      * device.
      */
     private boolean mTwoPane;
-    private final String BLUETOOTH_NAME = "ExampleRobot";
+    private final String BLUETOOTH_NAME = "HC-06";
     private TextView resistanceDisplay;
     private BluetoothArduino bluetoothArduino= BluetoothArduino.getInstance(BLUETOOTH_NAME);
     private ResistanceLevel resistanceLevel = new ResistanceLevel();
+    private boolean connected=false;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_resistance);
-        resistanceDisplay = (TextView) findViewById(R.id.resistanceDisplay);
+        resistanceDisplay = (TextView) findViewById(R.id.currentResistance);
         resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
-        bluetoothArduino.Connect();
-        bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
+        resistanceDisplay.setTextSize(100);
+        connectBluetooth();
+
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -95,6 +97,14 @@ public class ItemListActivity extends Activity
         }
     }
 
+    private void connectBluetooth (){
+        if (!connected){
+            bluetoothArduino.Connect();
+            bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
+            connected = true;
+        }
+    }
+
     public void chooseDistanceTime(View view){
         resistanceLevel.changeResistance(1);
         bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
@@ -106,10 +116,13 @@ public class ItemListActivity extends Activity
         bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
         resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
     }
+
     
     public void decreaseResistance(View view){
         resistanceLevel.changeResistance(-1);
         bluetoothArduino.SendMessage(String.valueOf(resistanceLevel.getCurrentResistance()));
         resistanceDisplay.setText(String.valueOf(resistanceLevel.getCurrentResistance()));
     }
+
+    public void editResistance(View view){}
 }
