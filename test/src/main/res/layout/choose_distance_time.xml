@@ -20,7 +20,9 @@
     android:drawableLeft="@drawable/distance"
     android:onClick="chooseDistanceTime"
     android:clickable="true"
-    android:nestedScrollingEnabled="false">
+    android:nestedScrollingEnabled="false"
+    android:id="@+id/item_list"
+    >
 </Button>
 
 </LinearLayout>
