@@ -1,5 +1,5 @@
 package backend;
-
+//Code by aron-bordin
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
