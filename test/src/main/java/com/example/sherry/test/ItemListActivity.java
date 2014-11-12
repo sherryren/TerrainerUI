@@ -3,6 +3,7 @@ package com.example.sherry.test;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
 
 
 /**
@@ -77,5 +78,9 @@ public class ItemListActivity extends Activity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
+    }
+
+    public void chooseDistanceTime(View view){
+        System.out.println("I got the button to do something");
     }
 }
